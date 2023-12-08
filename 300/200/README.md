@@ -14,3 +14,8 @@ To convert the Collada (*.dae) file to the glTF file format, you can use one of 
 
 - Locally, using a binary application called **COLLADE2GLTF** (for Windows, Mac, or Linux), which you can download from https://github.com/KhronosGroup/COLLADA2GLTF
 - Online, you can browse to "Model Converter" at https://modelconverter.com/convert.html
+
+
+![COLLADA2GLTF_on_Windows](https://github.com/vanHeemstraSystems/threejs-collada-gltf/assets/1499433/f6b2bb9b-d8a8-4871-9098-60aa9a298548)
+
+COLLADA2GLTF on Windows
