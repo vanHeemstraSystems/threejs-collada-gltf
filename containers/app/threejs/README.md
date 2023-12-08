@@ -86,6 +86,8 @@ Follow the rest of the instructions at https://svelte-cubed.vercel.app/docs/gett
 
 Next, we need to import our glTF model of the Lego baseplate...
 
+Continue with these instructions, https://dev.to/alexwarnes/svelte-cubed-loading-your-gltf-models-14lf
+
 MORE ...
 
 ==========================================================================================================
