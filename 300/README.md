@@ -23,5 +23,3 @@ See [README.md](./300/README.md)
 ## 400 - Alternatively, load the glTF file in BabylonJS
 
 See [README.md](./400/README.md)
-
-MORE ...
