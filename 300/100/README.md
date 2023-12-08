@@ -41,5 +41,3 @@ The XML inside the exported file is:
 See [lego_baseplate_48x48_4186_dark_grey.dae](lego_baseplate_48x48_4186_dark_grey.dae)
 
 **WARNING**: The above file is very large in size (> 45 MB)!
-
-MORE ...
