@@ -30,7 +30,7 @@ Now we're ready to start building 3D graphics (in your project’s src/routes/in
 
 **NOTE**: You can watch the website at the location that you will be prompted.
 
-Your First Scene
+[Your First Scene](https://svelte-cubed.vercel.app/docs/getting-started)
 
 ```
 <script>
