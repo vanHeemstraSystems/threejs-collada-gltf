@@ -8,6 +8,26 @@ Start the Svelte App as follows:
 npm run dev -- --open
 ```
 
+We will be using Svelte-Cubed, hence follow the instructions at https://svelte-cubed.vercel.app/
+
+```
+npm install svelte-cubed
+```
+
+In addition, we will be using ThreeJS, so install it also:
+
+```
+npm install three
+```
+
+And as we are using TypeScript, also install:
+
+```
+npm install -D @types/three
+```
+
+Now we're ready to start building 3D graphics (in your project’s src/routes/index.svelte, for example).
+
 You can watch the website at the location that you will be prompted.
 
 # create-svelte
