@@ -23,3 +23,7 @@ See [README.md](./300/README.md)
 ## 400 - Alternatively, load the glTF file in BabylonJS
 
 See [README.md](./400/README.md)
+
+## 500 - Inspect your WebGL Scene with Spector.js
+
+See [README.md](./500/README.md)
