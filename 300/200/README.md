@@ -19,3 +19,5 @@ To convert the Collada (*.dae) file to the glTF file format, you can use one of 
 ![COLLADA2GLTF_on_Windows](https://github.com/vanHeemstraSystems/threejs-collada-gltf/assets/1499433/f6b2bb9b-d8a8-4871-9098-60aa9a298548)
 
 COLLADA2GLTF on Windows
+
+The output is attached to this directory as "lego_baseplate_48x48_4186_dark_grey.gltf" (large in size about 10MB, but the *.dae file was > 45 MB).
