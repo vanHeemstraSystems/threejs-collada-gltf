@@ -10,9 +10,7 @@ Video at https://youtu.be/tonSNnEj-ow
 
 See also "glTF Tutorial Series" at https://www.youtube.com/playlist?list=PLYO7XTAX41FNVFVQ2yS7JNAWYou5giSlH
 
-To converst the Collada (*.dae) file to the glTF file format, you can use one of the following:
+To convert the Collada (*.dae) file to the glTF file format, you can use one of the following:
 
 - Locally, using a binary application called **COLLADE2GLTF** (for Windows, Mac, or Linux), which you can download from https://github.com/KhronosGroup/COLLADA2GLTF
 - Online, you can browse to "Model Converter" at https://modelconverter.com/convert.html
-
-MORE ...
