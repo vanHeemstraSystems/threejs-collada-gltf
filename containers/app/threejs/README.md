@@ -1,3 +1,16 @@
+# ThreeJS
+
+We can follow along this tutorial "[Svelte-Cubed: Loading Your glTF Models](https://dev.to/alexwarnes/svelte-cubed-loading-your-gltf-models-14lf)" in particular "[PART FOUR: Loading Your GLTF Models](https://svelte.dev/repl/8ea0488302bb434991cc5b82f653cdb5?version=3.48.0)" to load the glTF file into ThreeJS, whilst building a Svelte Application.
+
+Strat the Svelte App as follows:
+
+```
+npm run dev
+```
+
+You can watch the website at the location that you will be prompted.
+
+
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or  if you want a full-fledged app framework  use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
 ---
