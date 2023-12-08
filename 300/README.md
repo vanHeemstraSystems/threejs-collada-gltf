@@ -6,7 +6,7 @@
 
 - We'll convert the Collada (```*.dae```) file by means of glTF.
 
-- We then load the glTF file into ThreeJS.
+- We then load the glTF file into ThreeJS or BabylonJS alternatively.
 
 ## 100 - Build and Export Lego Model from MecaBricks as Collade (*.dae) file
 
