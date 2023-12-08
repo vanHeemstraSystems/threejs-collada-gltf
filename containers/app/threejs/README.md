@@ -45,6 +45,47 @@ Now we're ready to start building 3D graphics (in your project’s src/routes/in
 ```
 src/routes/+page.svelte
 
+If you’re like me, the first thing you did when you saw the cube above was to try and spin it. That won’t work until we add some controls:
+
+```
+...
+    <SC.OrbitControls enableZoom={false} />
+...
+```
+src/routes/+page.svelte
+
+The default MeshNormalMaterial is useful for debugging, but most of the time you’ll want to specify something else, such as MeshStandardMaterial:
+
+```
+...
+	<SC.Mesh
+		geometry={new THREE.BoxGeometry()}
+		material={new THREE.MeshStandardMaterial({ color: 0xff3e00 })}
+	/>
+...
+```
+src/routes/+page.svelte
+
+Your cube will now be totally black :( 
+
+Since MeshStandardMaterial uses physically-based rendering, we’ll need to illuminate the mesh.
+
+LET THERE BE LIGHT
+
+Svelte Cubed provides components corresponding to the various lights in Three.js, such as AmbientLight and DirectionalLight:
+
+```
+...
+	<SC.AmbientLight intensity={0.6} />
+	<SC.DirectionalLight intensity={0.6} position={[-2, 3, 2]} />
+...
+```
+src/routes/+page.svelte
+
+Follow the rest of the instructions at https://svelte-cubed.vercel.app/docs/getting-started from UPDATING STATE.
+
+Next, we need to import our glTF model of the Lego baseplate...
+
 MORE ...
 
 ==========================================================================================================
