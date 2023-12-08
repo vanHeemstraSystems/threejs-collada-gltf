@@ -5,6 +5,8 @@ Based on "Collada Overview" at https://www.khronos.org/api/collada
 
 Based on "GLTFLoader" at https://threejs.org/docs/#examples/en/loaders/GLTFLoader
 
+See also "Khronos - glTF Sample Viewer" at https://github.khronos.org/glTF-Sample-Viewer-Release/
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
