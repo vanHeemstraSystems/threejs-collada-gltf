@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import * as THREE from "three";
+	import * as SC from "svelte-cubed";
+	// all of our javascript and logic would go here
+</script>
+
+<SC.Canvas>
+	<SC.Mesh geometry={new THREE.BoxGeometry()} />
+	<SC.PerspectiveCamera position={[1, 1, 3]} />
+</SC.Canvas>

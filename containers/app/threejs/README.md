@@ -28,7 +28,26 @@ npm install -D @types/three
 
 Now we're ready to start building 3D graphics (in your project’s src/routes/index.svelte, for example).
 
-You can watch the website at the location that you will be prompted.
+**NOTE**: You can watch the website at the location that you will be prompted.
+
+Your First Scene
+
+```
+<script>
+	import * as THREE from 'three';
+	import * as SC from 'svelte-cubed';
+</script>
+
+<SC.Canvas>
+	<SC.Mesh geometry={new THREE.BoxGeometry()} />
+	<SC.PerspectiveCamera position={[1, 1, 3]} />
+</SC.Canvas>
+```
+src/routes/+page.svelte
+
+MORE ...
+
+==========================================================================================================
 
 # create-svelte
 
