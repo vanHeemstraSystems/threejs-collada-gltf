@@ -7,6 +7,8 @@ Based on "GLTFLoader" at https://threejs.org/docs/#examples/en/loaders/GLTFLoade
 
 See also "Khronos - glTF Sample Viewer" at https://github.khronos.org/glTF-Sample-Viewer-Release/
 
+See also "Which JavaScript 3D Library is Right for You?" at https://mohammadrahi.medium.com/comparing-three-js-and-babylon-js-which-javascript-3d-library-is-right-for-you-7196ef21949e
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
