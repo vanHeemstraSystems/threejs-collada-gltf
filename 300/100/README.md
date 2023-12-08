@@ -26,4 +26,8 @@ Leave *Logo on Studs* unchecked.
 
 Confirm by clicking **EXPORT**
 
+![export_lego_model_as_collada_dae_file](https://github.com/vanHeemstraSystems/threejs-collada-gltf/assets/1499433/c9d7aabd-2d9a-4b34-b792-be48253c043a)
+
+Export Lego Model as Collada (.dae) File
+
 MORE ...
