@@ -8,4 +8,6 @@ glTF™ is a royalty-free specification for the efficient transmission and loadi
 
 Video at https://youtu.be/tonSNnEj-ow
 
+See also "glTF Tutorial Series" at https://www.youtube.com/playlist?list=PLYO7XTAX41FNVFVQ2yS7JNAWYou5giSlH
+
 MORE ...
