@@ -4,7 +4,7 @@
 
 - We'll export the (Lego) model as a Collada (```*.dae```) file from MecaBricks.
 
-- We'll convert the Collada (```*.dae```) file by means of glTF.
+- We'll convert the Collada (```*.dae```) file into glTF file format.
 
 - We then load the glTF file into ThreeJS or BabylonJS alternatively.
 
