@@ -2,7 +2,7 @@
     import * as THREE from "three";
     import * as SC from "svelte-cubed";
     let rotate = 0;
-    let scaleType = "MEDIUM"
+    let scaleType = "MEDIUM";
     SC.onFrame(() => {
       // Every frame, assign these radians to rotationY
       rotate += .01;

@@ -184,7 +184,7 @@ We’ll create a variable to hold the selection called scaleType and set the ini
 
 ```
 ...
-  let scaleType = "MEDIUM"
+  let scaleType = "MEDIUM";
 ...
 ```
 containers/app/threejs/src/routes/octo.svelte
