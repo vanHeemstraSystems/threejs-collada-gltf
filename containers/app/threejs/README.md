@@ -72,6 +72,8 @@ src/routes/+page.svelte
 
 Your cube will now be totally black :( 
 
+**NOTE**: *MeshStandardMaterial* interacts with light and we don't have any lights! You can experiment with a *MeshBasicMaterial* for something that does not interact with light to compare.
+
 Since MeshStandardMaterial uses physically-based rendering, we’ll need to illuminate the mesh.
 
 LET THERE BE LIGHT
