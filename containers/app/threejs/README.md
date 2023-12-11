@@ -56,6 +56,8 @@ src/routes/+page.svelte
 
 **NOTE**: What regular people call shapes are called a "mesh" in 3D-land, so we'll use that word from now on. A **mesh** is a combination of a **geometry** and a **material**, just like your table: it has a geometry (e.g. rectangle or oval) and a material (e.g. wood or glass).
 
+Three.js offers many [geometries](https://threejs.org/docs/index.html?q=geometry) and [materials](https://threejs.org/docs/index.html?q=material) you can experiment with, and each variant can take several unique properties. 
+
 The default MeshNormalMaterial is useful for debugging, but most of the time you’ll want to specify something else, such as MeshStandardMaterial:
 
 ```
