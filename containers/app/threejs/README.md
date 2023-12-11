@@ -109,14 +109,57 @@ we will cover two different approaches to moving things around in your scene wit
 
 What we want to do is adjust the rotation a little bit, multiple times per second. First thought might be to use JavaScript’s setInterval and make an update every x number of milliseconds. But there’s a more performant way!
 
-Svelte-cubed gives us a method called onFrame(callback) that accepts a callback method where we can make some change to our scene on each frame. Let’s give it a try.
+Svelte-cubed gives us a method called ```onFrame(callback)`````` that accepts a callback method where we can make some change to our scene on each frame. Let’s give it a try.
 
-A mesh has a rotation property that accepts an array with x, y, z radian values that each describe the mesh’s rotation along the respective axis (you can brush up on your radians here: Khan Academy: Intro to Radians). We want to rotate our mesh along the y-axis, so we’ll declare a rotate variable, update it inside the onFrame callback, and then pass it into our mesh in the Octo.svelte file:
+A mesh has a ```rotation``` property that accepts an array with x, y, z radian values that each describe the mesh’s rotation along the respective axis (you can brush up on your radians here: [Khan Academy: Intro to Radians](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:radians/v/introduction-to-radians)). We want to rotate our mesh along the y-axis, so we’ll declare a ```rotate``` variable, update it inside the ```onFrame``` callback, and then pass it into our mesh in the ```Octo.svelte``` file:
 
 ```
+<script>
+    import * as THREE from "three";
+    import * as SC from "svelte-cubed";
+    let rotate = 0;
+    SC.onFrame(() => {
+      // Every frame, assign these radians to rotationY
+      rotationY += .01;
+    })
+</script>
 
+<SC.Canvas background={new THREE.Color('seagreen')}>
+  <SC.AmbientLight
+    color={new THREE.Color('white')}
+    intensity={.5}
+  />  
+  <SC.DirectionalLight
+    color={new THREE.Color('white')}
+    intensity={.75}
+    position={[10, 10, 10]}
+  />
+
+  <!-- MESHES -->
+   <SC.Mesh
+    geometry={new THREE.OctahedronGeometry()}
+    material={new THREE.MeshStandardMaterial({
+      color: new THREE.Color('salmon')
+    })}
+	rotation={[0, rotate, 0]}
+  />
+
+  <!-- CAMERA -->
+  <SC.PerspectiveCamera near={1} far={100} fov={55}>
+  </SC.PerspectiveCamera>
+  <SC.OrbitControls />
+
+<!-- all of our scene stuff will go here! -->
+
+</SC.Canvas>
 ```
 containers/app/threejs/src/routes/octo.svelte
+
+
+
+
+
+
 
 ==== WE ARE HERE ===
 
