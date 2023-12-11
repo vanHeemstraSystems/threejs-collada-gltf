@@ -111,13 +111,13 @@ What we want to do is adjust the rotation a little bit, multiple times per secon
 
 Svelte-cubed gives us a method called ```onFrame(callback)`````` that accepts a callback method where we can make some change to our scene on each frame. Let’s give it a try.
 
-A mesh has a ```rotation``` property that accepts an array with x, y, z radian values that each describe the mesh’s rotation along the respective axis (you can brush up on your radians here: [Khan Academy: Intro to Radians](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:radians/v/introduction-to-radians)). We want to rotate our mesh along the y-axis, so we’ll declare a ```rotate``` variable, update it inside the ```onFrame``` callback, and then pass it into our mesh in the ```Octo.svelte``` file:
+A mesh has a ```rotation``` property that accepts an array with x, y, z radian values that each describe the mesh’s rotation along the respective axis (you can brush up on your radians here: [Khan Academy: Intro to Radians](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:radians/v/introduction-to-radians)). We want to rotate our mesh along the y-axis, so we’ll declare a ```rotationY``` variable, update it inside the ```onFrame``` callback, and then pass it into our mesh in the ```Octo.svelte``` file:
 
 ```
 <script>
     import * as THREE from "three";
     import * as SC from "svelte-cubed";
-    let rotate = 0;
+    let rotationY = 0;
     SC.onFrame(() => {
       // Every frame, assign these radians to rotationY
       rotationY += .01;
@@ -141,7 +141,7 @@ A mesh has a ```rotation``` property that accepts an array with x, y, z radian v
     material={new THREE.MeshStandardMaterial({
       color: new THREE.Color('salmon')
     })}
-	rotation={[0, rotate, 0]}
+	rotation={[0, rotationY, 0]}
   />
 
   <!-- CAMERA -->
@@ -155,7 +155,7 @@ A mesh has a ```rotation``` property that accepts an array with x, y, z radian v
 ```
 containers/app/threejs/src/routes/octo.svelte
 
-
+Now our Octo should be spinning along the y-axis on each frame.
 
 
 
