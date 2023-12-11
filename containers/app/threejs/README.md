@@ -96,7 +96,7 @@ Continue with these instructions, https://dev.to/alexwarnes/svelte-cubed-loading
 
 MORE ...
 
-==========================================================================================================
+================================== AUTO-GENERATED NOTES ===================================================
 
 # create-svelte
 
