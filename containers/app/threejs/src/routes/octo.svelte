@@ -2,6 +2,7 @@
     import * as THREE from "three";
     import * as SC from "svelte-cubed";
     let rotate = 0;
+    let scaleType = "MEDIUM"
     SC.onFrame(() => {
       // Every frame, assign these radians to rotationY
       rotate += .01;
@@ -37,3 +38,29 @@
 <!-- all of our scene stuff will go here! -->
 
 </SC.Canvas>
+
+<div class="controls">
+    <label>
+    SMALL
+        <input type="radio" bind:group={scaleType} value="SMALL" />
+    </label>
+    <label>
+    MEDIUM
+        <input type="radio" bind:group={scaleType} value="MEDIUM" />
+    </label>
+    <label>
+    LARGE
+        <input type="radio" bind:group={scaleType} value="LARGE" />
+    </label>
+</div>
+
+<style>
+    .controls {
+        position: absolute;
+        top: .5rem;
+        left: .5rem;
+        background: #00000088;
+        padding: .5rem;
+        color: white;
+    }
+</style>

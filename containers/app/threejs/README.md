@@ -167,8 +167,69 @@ Let’s go big and use the rotation variable for ALL THREE mesh axes:
 ```
 containers/app/threejs/src/routes/octo.svelte
 
+This motion makes our mesh a lot more visually engaging, and you can see how it would be helpful for something like a planet. Remember we can use this approach for updating ```any``` value: rotation, position, or scale.
 
+But what if we have some kind of motion that we only want to happen once? Say for example we want to toggle our octahedron size between small, medium, and large. It would be cumbersome (and perform poorly) to add a bunch of conditional logic inside the ```onFrame``` call back. Svelte gives us the perfect tool for the job with a ```tweened store``````.
 
+## Transitional Motion: On-Demand
+Let’s break down what we want:
+
+1. A set of radio inputs: small, medium, large (medium by default).
+2. When I select a radio input, the octahedron should ```scale``` to match the selected size.
+3. The scaling should transition smoothly from one size to another.
+
+### STEP 1: Svelte Radio Input Binding (bonus Lesson)
+
+We’ll create a variable to hold the selection called scaleType and set the initial value to "**MEDIUM**".
+
+```
+...
+  let scaleType = "MEDIUM"
+...
+```
+containers/app/threejs/src/routes/octo.svelte
+
+Nailed it. Now below our canvas markup, we’ll create three radio inputs with labels:
+
+```
+...
+<div class="controls">
+    <label>
+    SMALL
+        <input type="radio" bind:group={scaleType} value="SMALL" />
+    </label>
+    <label>
+    MEDIUM
+        <input type="radio" bind:group={scaleType} value="MEDIUM" />
+    </label>
+    <label>
+    LARGE
+        <input type="radio" bind:group={scaleType} value="LARGE" />
+    </label>
+</div>
+...
+```
+containers/app/threejs/src/routes/octo.svelte
+
+Notice that each input has a value and we ```bind``` all of them to the ```scaleType``` variable. This is some classic Svelte simplicity, no event handling to worry about. If you want to learn more about group bindings for radio and checkbox inputs, check out [the official tutorial](https://svelte.dev/tutorial/group-inputs).
+
+But we still can’t see anything, so add a style block under all the markup:
+
+```
+...
+<style>
+    .controls {
+        position: absolute;
+        top: .5rem;
+        left: .5rem;
+        background: #00000088;
+        padding: .5rem;
+        color: white;
+    }
+</style>
+...
+```
+containers/app/threejs/src/routes/octo.svelte
 
 
 ==== WE ARE HERE ===
