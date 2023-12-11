@@ -103,6 +103,10 @@ Now you can interact with your scene by clicking and dragging, scrolling to zoom
 
 Follow the rest of the instructions at https://svelte-cubed.vercel.app/docs/getting-started from UPDATING STATE.
 
+
+==== WE ARE HERE ===
+
+
 Next, we need to import our glTF model of the Lego baseplate...
 
 Continue with these instructions, https://dev.to/alexwarnes/svelte-cubed-loading-your-gltf-models-14lf

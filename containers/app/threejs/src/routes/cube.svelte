@@ -18,6 +18,7 @@
 >
 
     <SC.Group position={[0, -height / 2, 0]}>
+	    <!-- MESHES -->
 	    <SC.Mesh
 		    geometry={new THREE.PlaneGeometry(50, 50)}
 		    material={new THREE.MeshStandardMaterial({ color: 'burlywood' })}
@@ -30,7 +31,7 @@
 		    position={[0, 0.001, 0]}
 	    />
     </SC.Group>
-
+    <!-- MESHES -->
 	<SC.Mesh 
       geometry={new THREE.BoxGeometry()}
       material={new THREE.MeshStandardMaterial({ color: 0xff3e00 })}
@@ -38,13 +39,16 @@
       rotation={[0, spin, 0]}
       castShadow
      />
+	<!-- CAMERA --> 
 	<!-- 
 	    near: anything closer than this will not be shown by the camera (unit: meters)
         far: anything farther than this will not be shown by the camera (unit: meters)
         fov: (Field of View) anything outside of this angle will not be shown by the camera (unit: degrees)
     -->
 	<SC.PerspectiveCamera position={[1, 1, 3]} near={1} far={100} fov={55} />
+	<!-- CONTROLS, USE AFTER CAMERA -->
     <SC.OrbitControls enabled enablePan={true} enableZoom={true} enableRotate={true} enableDamping={true} maxPolarAngle={Math.PI * 0.51} />
+	<!-- LIGHTS -->
     <SC.AmbientLight intensity={0.6} />
 	<SC.DirectionalLight intensity={0.6} position={[-2, 3, 2]} shadow={{ mapSize: [2048, 2048] }} />
 </SC.Canvas>
