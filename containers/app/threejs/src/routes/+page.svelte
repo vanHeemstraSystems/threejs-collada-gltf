@@ -38,7 +38,12 @@
       rotation={[0, spin, 0]}
       castShadow
      />
-	<SC.PerspectiveCamera position={[1, 1, 3]} />
+	<!-- 
+	    near: anything closer than this will not be shown by the camera (unit: meters)
+        far: anything farther than this will not be shown by the camera (unit: meters)
+        fov: (Field of View) anything outside of this angle will not be shown by the camera (unit: degrees)
+    -->
+	<SC.PerspectiveCamera position={[1, 1, 3]} near={1} far={100} fov={55} />
     <SC.OrbitControls enableZoom={false} maxPolarAngle={Math.PI * 0.51} />
     <SC.AmbientLight intensity={0.6} />
 	<SC.DirectionalLight intensity={0.6} position={[-2, 3, 2]} shadow={{ mapSize: [2048, 2048] }} />
