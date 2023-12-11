@@ -54,6 +54,8 @@ If you’re like me, the first thing you did when you saw the cube above was to 
 ```
 src/routes/+page.svelte
 
+**NOTE**: What regular people call shapes are called a "mesh" in 3D-land, so we'll use that word from now on. A **mesh** is a combination of a **geometry** and a **material**, just like your table: it has a geometry (e.g. rectangle or oval) and a material (e.g. wood or glass).
+
 The default MeshNormalMaterial is useful for debugging, but most of the time you’ll want to specify something else, such as MeshStandardMaterial:
 
 ```
