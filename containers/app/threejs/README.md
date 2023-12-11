@@ -103,6 +103,20 @@ Now you can interact with your scene by clicking and dragging, scrolling to zoom
 
 Follow the rest of the instructions at https://svelte-cubed.vercel.app/docs/getting-started from UPDATING STATE.
 
+we will cover two different approaches to moving things around in your scene with constant motion using onFrame and on-demand motion using svelte’s tweened stores and easing functions.
+
+## Constant Motion
+
+What we want to do is adjust the rotation a little bit, multiple times per second. First thought might be to use JavaScript’s setInterval and make an update every x number of milliseconds. But there’s a more performant way!
+
+Svelte-cubed gives us a method called onFrame(callback) that accepts a callback method where we can make some change to our scene on each frame. Let’s give it a try.
+
+A mesh has a rotation property that accepts an array with x, y, z radian values that each describe the mesh’s rotation along the respective axis (you can brush up on your radians here: Khan Academy: Intro to Radians). We want to rotate our mesh along the y-axis, so we’ll declare a rotate variable, update it inside the onFrame callback, and then pass it into our mesh in the Octo.svelte file:
+
+```
+
+```
+containers/app/threejs/src/routes/octo.svelte
 
 ==== WE ARE HERE ===
 

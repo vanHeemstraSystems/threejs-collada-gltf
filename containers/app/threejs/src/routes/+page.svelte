@@ -1,13 +1,20 @@
 <script>
   import Cube from "./cube.svelte";
+  import Octo from "./octo.svelte";
 </script>
 <h1>Home Page</h1>
+
+<p>Cube:</p>
 
 <div class="scene-container">
   <Cube />
 </div>
 
-<p>Some text goes here</p>
+<p>Octo:</p>
+
+<div class="scene-container">
+  <Octo />
+</div>
 
 <style>
   .scene-container {
