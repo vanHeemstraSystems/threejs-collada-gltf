@@ -26,7 +26,7 @@ And as we are using TypeScript, also install:
 npm install -D @types/three
 ```
 
-Now we're ready to start building 3D graphics (in your project’s src/routes/index.svelte, for example).
+Now we're ready to start building 3D graphics (in your project’s src/routes/+page.svelte, for example).
 
 **NOTE**: You can watch the website at the location that you will be prompted.
 
