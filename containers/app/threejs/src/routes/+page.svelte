@@ -1,62 +1,21 @@
 <script>
-	import * as THREE from "three";
-	import * as SC from "svelte-cubed";
-	let width = 1;
-	let height = 1;
-	let depth = 1;
-    let spin = 0;
-	SC.onFrame(() => {
-		spin += 0.01;
-	});
+  import Cube from "./cube.svelte";
 </script>
+<h1>Home Page</h1>
 
-<SC.Canvas 
-    antialias 
-    background={new THREE.Color('papayawhip')} 
-    fog={new THREE.FogExp2('papayawhip', 0.1)}
-    shadows
->
-
-    <SC.Group position={[0, -height / 2, 0]}>
-	    <SC.Mesh
-		    geometry={new THREE.PlaneGeometry(50, 50)}
-		    material={new THREE.MeshStandardMaterial({ color: 'burlywood' })}
-		    rotation={[-Math.PI / 2, 0, 0]}
-		    receiveShadow
-	    />
-
-	    <SC.Primitive
-		    object={new THREE.GridHelper(50, 50, 0x444444, 0x555555)}
-		    position={[0, 0.001, 0]}
-	    />
-    </SC.Group>
-
-	<SC.Mesh 
-      geometry={new THREE.BoxGeometry()}
-      material={new THREE.MeshStandardMaterial({ color: 0xff3e00 })}
-      scale={[width, height, depth]}
-      rotation={[0, spin, 0]}
-      castShadow
-     />
-	<!-- 
-	    near: anything closer than this will not be shown by the camera (unit: meters)
-        far: anything farther than this will not be shown by the camera (unit: meters)
-        fov: (Field of View) anything outside of this angle will not be shown by the camera (unit: degrees)
-    -->
-	<SC.PerspectiveCamera position={[1, 1, 3]} near={1} far={100} fov={55} />
-    <SC.OrbitControls enabled enabledPan={true} enableZoom={true} enableRotate={true} enableDamping={true} maxPolarAngle={Math.PI * 0.51} />
-    <SC.AmbientLight intensity={0.6} />
-	<SC.DirectionalLight intensity={0.6} position={[-2, 3, 2]} shadow={{ mapSize: [2048, 2048] }} />
-</SC.Canvas>
-
-<div class="controls">
-	<label><input type="range" bind:value={width} min={0.1} max={3} step={0.1} /> width</label>
-	<label><input type="range" bind:value={height} min={0.1} max={3} step={0.1} /> height</label>
-	<label><input type="range" bind:value={depth} min={0.1} max={3} step={0.1} /> depth</label>
+<div class="scene-container">
+  <Cube />
 </div>
 
+<p>Some text goes here</p>
+
 <style>
-	.controls {
-		position: absolute;
-	}
+  .scene-container {
+    /* position relative let's the canvas position itself relative to this container */
+    position: relative;
+    width: 75%;
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto;
+  }
 </style>

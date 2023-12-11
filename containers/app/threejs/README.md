@@ -26,7 +26,7 @@ And as we are using TypeScript, also install:
 npm install -D @types/three
 ```
 
-Now we're ready to start building 3D graphics (in your project’s src/routes/+page.svelte, for example).
+Now we're ready to start building 3D graphics (in your project’s src/routes/cube.svelte, for example).
 
 **NOTE**: You can watch the website at the location that you will be prompted.
 
@@ -43,7 +43,7 @@ Now we're ready to start building 3D graphics (in your project’s src/routes/+p
 	<SC.PerspectiveCamera position={[1, 1, 3]} />
 </SC.Canvas>
 ```
-src/routes/+page.svelte
+src/routes/cube.svelte
 
 If you’re like me, the first thing you did when you saw the cube above was to try and spin it. That won’t work until we add some controls:
 
@@ -52,7 +52,7 @@ If you’re like me, the first thing you did when you saw the cube above was to 
     <SC.OrbitControls enableZoom={false} />
 ...
 ```
-src/routes/+page.svelte
+src/routes/cube.svelte
 
 **NOTE**: What regular people call shapes are called a "mesh" in 3D-land, so we'll use that word from now on. A **mesh** is a combination of a **geometry** and a **material**, just like your table: it has a geometry (e.g. rectangle or oval) and a material (e.g. wood or glass).
 
@@ -68,7 +68,7 @@ The default MeshNormalMaterial is useful for debugging, but most of the time you
 	/>
 ...
 ```
-src/routes/+page.svelte
+src/routes/cube.svelte
 
 Your cube will now be totally black :( 
 
@@ -88,7 +88,7 @@ Svelte Cubed provides components corresponding to the various lights in Three.js
 	<SC.DirectionalLight intensity={0.6} position={[-2, 3, 2]} />
 ...
 ```
-src/routes/+page.svelte
+src/routes/cube.svelte
 
 To get a full range of interactions we'll add orbit controls after our camera.
 
@@ -97,7 +97,7 @@ To get a full range of interactions we'll add orbit controls after our camera.
 	<SC.OrbitControls enabled enabledPan={true} enableZoom={true} enableRotate={true} enableDamping={true} maxPolarAngle={Math.PI * 0.51} />
 ...
 ```
-src/routes/+page.svelte
+src/routes/cube.svelte
 
 Now you can interact with your scene by clicking and dragging, scrolling to zoom, and right-click and drag to pan.
 
