@@ -267,13 +267,88 @@ $: if (scaleType === "SMALL"){
 ```
 containers/app/threejs/src/routes/octo.svelte
 
+Just to review:
+
+- the inputs control the scaleType small/medium/large.
+- the scale variable reacts to any change to the scaleType.
+- we pass the scale value into our mesh’s scale array.
+
+### STEP 3: Smooth Transitions
+
+Right now our mesh jumps directly from one scale to another, and what we’d like to see is a smooth transition. When we go from small (.5) to large (1.75) we’d like that to take about 2 seconds and progress through a handful of values in ```between``` the current scale and the next scale. Svelte provides something called a ```tweened store``` for just this type of thing! https://svelte.dev/tutorial/tweened
+
+A tweened store is like a fancy variable that we can give a value, say 1. When we update that value to, say 1.75, the store value will shift to that value over time based on how we configure it. Let’s see what that looks like by updating our ```scale``` to be a tweened store and seeing what breaks:
+
+```
+...
+  import { tweened } from "svelte/motion";
+  let scale = tweened(1);
+...
+```
+containers/app/threejs/src/routes/octo.svelte
+
+Everything is broken! That’s because tweened stores are fancy variables (they’re actually just objects) and we need to access them in a special way [more info here](https://svelte.dev/tutorial/writable-stores). The shorthand way for reading and writing the value of a svelte store is with the ```$``` prefix. So everywhere we read or write to scale needs to be updated to ```$scale```:
+
+Inside our reactive statement:
+
+```
+...
+// reactive statement
+$: if (scaleType === "SMALL"){
+    $scale = .25;
+} else if (scaleType === "MEDIUM"){
+    $scale = 1;
+} else if (scaleType === "LARGE") {
+    $scale = 1.75;
+}
+...
+```
+containers/app/threejs/src/routes/octo.svelte
+
+And inside our mesh:
+
+```
+...
+ <SC.Mesh
+    geometry={new THREE.OctahedronGeometry()}
+    material={new THREE.MeshStandardMaterial({
+      color: new THREE.Color('salmon')
+    })}
+    rotation={[rotate, rotate, rotate]}
+    scale={[$scale, $scale, $scale]}
+  />
+...
+```
+containers/app/threejs/src/routes/octo.svelte
+
+Now look at that transition! It will go smoothly.
+
+### Customizing Transitions
+
+That’s a smooth transition, but you know what would make it even better? Changing the duration and the easing. Well that’s just the second argument to a tweened store! And of course Svelte provides [a ton of great easing functions](https://svelte.dev/examples/easing) out of the box. I’ll use one here, but you should definitely play around with different options!
+
+```
+...
+  import { elasticOut } from "svelte/easing";
+  let scale = tweened(1, { duration: 2000, easing: elasticOut });
+...
+```
+containers/app/threejs/src/routes/octo.svelte
+
+In the next section we’ll cover animation accessibility concerns and how to use ```prefers-reduced-motion``` to avoid using animations for users who don’t want them, and how to accommodate screens with varying frame-rates so your animations can look consistent across devices.
 
 
 
-==== WE ARE HERE ===
+==== WE ARE HERE    ===
 
 
 Next, we need to import our glTF model of the Lego baseplate...
+
+**NOTE**: Is it possible to Load models (GLTF, obj, FBX or similar) into SvelteCubed? if so, how? 
+
+Absolutely! Svelte Cubed has a ```<SC.Primitive />``` element you can use to drop any 3d object into. You would use threejs GLTFLoader like usual, and then just pass it to the element like ```<SC.Primitive object={myGLTFScene} />```
+
+For reference, you can add glTF models and see what the the svelte-cubed code looks like using this tool (disclosure, I made it for just this purpose!): [sc3-lab.netlify.app](sc3-lab.netlify.app)
 
 Continue with these instructions, https://dev.to/alexwarnes/svelte-cubed-loading-your-gltf-models-14lf
 

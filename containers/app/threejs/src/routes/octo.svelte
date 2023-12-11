@@ -1,17 +1,19 @@
 <script>
     import * as THREE from "three";
     import * as SC from "svelte-cubed";
+    import { tweened } from "svelte/motion";
+    import { elasticOut } from "svelte/easing";
     let rotate = 0;
-    let scale = 1;
+    let scale = tweened(1, { duration: 2000, easing: elasticOut });
     let scaleType = "MEDIUM";
 
     // reactive statement
     $: if (scaleType === "SMALL"){
-        scale = .25;
+        $scale = .25;
     } else if (scaleType === "MEDIUM"){
-        scale = 1;
+        $scale = 1;
     } else if (scaleType === "LARGE") {
-        scale = 1.75;
+        $scale = 1.75;
     }
 
     SC.onFrame(() => {
@@ -38,7 +40,7 @@
       color: new THREE.Color('salmon')
     })}
     rotation={[rotate, rotate, rotate]}
-    scale={[scale, scale, scale]}
+    scale={[$scale, $scale, $scale]}
   />
 
   <!-- CAMERA -->
