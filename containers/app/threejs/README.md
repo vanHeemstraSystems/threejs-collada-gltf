@@ -339,14 +339,12 @@ In the next section we’ll cover animation accessibility concerns and how to us
 
 
 
-==== WE ARE HERE    ===
+==== WE ARE HERE https://dev.to/alexwarnes/svelte-cubed-creating-an-accessible-and-consistent-experience-across-devices-42ae  ===
 
 
 Next, we need to import our glTF model of the Lego baseplate...
 
-**NOTE**: Is it possible to Load models (GLTF, obj, FBX or similar) into SvelteCubed? if so, how? 
-
-Absolutely! Svelte Cubed has a ```<SC.Primitive />``` element you can use to drop any 3d object into. You would use threejs GLTFLoader like usual, and then just pass it to the element like ```<SC.Primitive object={myGLTFScene} />```
+**NOTE**: Is it possible to Load models (GLTF, obj, FBX or similar) into SvelteCubed? if so, how? Absolutely! Svelte Cubed has a ```<SC.Primitive />``` element you can use to drop any 3d object into. You would use threejs GLTFLoader like usual, and then just pass it to the element like ```<SC.Primitive object={myGLTFScene} />```
 
 For reference, you can add glTF models and see what the the svelte-cubed code looks like using this tool (disclosure, I made it for just this purpose!): [sc3-lab.netlify.app](sc3-lab.netlify.app)
 
