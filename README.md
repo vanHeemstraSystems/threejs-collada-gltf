@@ -9,6 +9,8 @@ See also "Khronos - glTF Sample Viewer" at https://github.khronos.org/glTF-Sampl
 
 See also "SC3 LAB" at https://sc3-lab.netlify.app/
 
+See also "SC3 LAB - Interface" at https://sc3-lab.netlify.app/#/lab
+
 See also "Which JavaScript 3D Library is Right for You?" at https://mohammadrahi.medium.com/comparing-three-js-and-babylon-js-which-javascript-3d-library-is-right-for-you-7196ef21949e
 
 ## 100 - Introduction
