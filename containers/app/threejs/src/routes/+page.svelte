@@ -44,7 +44,7 @@
         fov: (Field of View) anything outside of this angle will not be shown by the camera (unit: degrees)
     -->
 	<SC.PerspectiveCamera position={[1, 1, 3]} near={1} far={100} fov={55} />
-    <SC.OrbitControls enableZoom={false} maxPolarAngle={Math.PI * 0.51} />
+    <SC.OrbitControls enabled enabledPan={true} enableZoom={true} enableRotate={true} enableDamping={true} maxPolarAngle={Math.PI * 0.51} />
     <SC.AmbientLight intensity={0.6} />
 	<SC.DirectionalLight intensity={0.6} position={[-2, 3, 2]} shadow={{ mapSize: [2048, 2048] }} />
 </SC.Canvas>

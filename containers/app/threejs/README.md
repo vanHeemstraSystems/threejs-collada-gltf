@@ -78,6 +78,8 @@ Since MeshStandardMaterial uses physically-based rendering, we’ll need to illu
 
 LET THERE BE LIGHT
 
+Unsurprisingly three.js offers many lighting options. Not sure how to incorporate this pun but: something, something, *the unbearable lightness of three-ing*. 
+
 Svelte Cubed provides components corresponding to the various lights in Three.js, such as AmbientLight and DirectionalLight:
 
 ```
@@ -87,6 +89,17 @@ Svelte Cubed provides components corresponding to the various lights in Three.js
 ...
 ```
 src/routes/+page.svelte
+
+To get a full range of interactions we'll add orbit controls after our camera.
+
+```
+...
+	<SC.OrbitControls enabled enabledPan={true} enableZoom={true} enableRotate={true} enableDamping={true} maxPolarAngle={Math.PI * 0.51} />
+...
+```
+src/routes/+page.svelte
+
+Now you can interact with your scene by clicking and dragging, scrolling to zoom, and right-click and drag to pan.
 
 Follow the rest of the instructions at https://svelte-cubed.vercel.app/docs/getting-started from UPDATING STATE.
 
