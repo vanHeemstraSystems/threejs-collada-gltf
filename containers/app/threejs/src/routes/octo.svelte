@@ -2,7 +2,18 @@
     import * as THREE from "three";
     import * as SC from "svelte-cubed";
     let rotate = 0;
+    let scale = 1;
     let scaleType = "MEDIUM";
+
+    // reactive statement
+    $: if (scaleType === "SMALL"){
+        scale = .25;
+    } else if (scaleType === "MEDIUM"){
+        scale = 1;
+    } else if (scaleType === "LARGE") {
+        scale = 1.75;
+    }
+
     SC.onFrame(() => {
       // Every frame, assign these radians to rotationY
       rotate += .01;
@@ -27,6 +38,7 @@
       color: new THREE.Color('salmon')
     })}
     rotation={[rotate, rotate, rotate]}
+    scale={[scale, scale, scale]}
   />
 
   <!-- CAMERA -->

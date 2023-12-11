@@ -231,6 +231,44 @@ But we still can’t see anything, so add a style block under all the markup:
 ```
 containers/app/threejs/src/routes/octo.svelte
 
+### STEP 2: Reactive Scaling
+
+Our ```scaleType``` variable updates whenever the selection changes, and any time ```scaleType``` changes we want to update the mesh’s scale properties. Back up in our script, let’s use another wonderful Svelte feature called a reactive statement https://svelte.dev/tutorial/reactive-statements to do just that.
+
+Below we'll declare a variable called ```scale``` with an initial value of 1, setup a reactive statement to update ```scale``` based on ```scaleType```, and then add the scale array to our mesh and use our scale value for the x, y, and z scaling.
+
+```
+...
+<script>
+// … other stuff in our script
+
+let scale = 1;
+
+// reactive statement
+$: if (scaleType === "SMALL"){
+    scale = .25;
+} else if (scaleType === "MEDIUM"){
+    scale = 1;
+} else if (scaleType === "LARGE") {
+    scale = 1.75;
+}
+</script>
+
+<!-- … other stuff in our markup -->
+ <SC.Mesh
+    geometry={new THREE.OctahedronGeometry()}
+    material={new THREE.MeshStandardMaterial({
+      color: new THREE.Color('salmon')
+    })}
+    rotation={[rotate, rotate, rotate]}
+    scale={[scale, scale, scale]}
+  />
+...
+```
+containers/app/threejs/src/routes/octo.svelte
+
+
+
 
 ==== WE ARE HERE ===
 
