@@ -1,10 +1,10 @@
 <script>
     import * as THREE from "three";
     import * as SC from "svelte-cubed";
-    let rotationY = 0;
+    let rotate = 0;
     SC.onFrame(() => {
       // Every frame, assign these radians to rotationY
-      rotationY += .01;
+      rotate += .01;
     })    
 </script>
 
@@ -25,7 +25,7 @@
     material={new THREE.MeshStandardMaterial({
       color: new THREE.Color('salmon')
     })}
-    rotation={[0, rotationY, 0]}
+    rotation={[rotate, rotate, rotate]}
   />
 
   <!-- CAMERA -->

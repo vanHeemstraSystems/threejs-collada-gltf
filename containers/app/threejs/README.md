@@ -117,10 +117,10 @@ A mesh has a ```rotation``` property that accepts an array with x, y, z radian v
 <script>
     import * as THREE from "three";
     import * as SC from "svelte-cubed";
-    let rotationY = 0;
+    let rotate = 0;
     SC.onFrame(() => {
       // Every frame, assign these radians to rotationY
-      rotationY += .01;
+      rotate += .01;
     })
 </script>
 
@@ -141,7 +141,7 @@ A mesh has a ```rotation``` property that accepts an array with x, y, z radian v
     material={new THREE.MeshStandardMaterial({
       color: new THREE.Color('salmon')
     })}
-	rotation={[0, rotationY, 0]}
+	rotation={[0, rotate, 0]}
   />
 
   <!-- CAMERA -->
@@ -156,6 +156,16 @@ A mesh has a ```rotation``` property that accepts an array with x, y, z radian v
 containers/app/threejs/src/routes/octo.svelte
 
 Now our Octo should be spinning along the y-axis on each frame.
+
+Let’s go big and use the rotation variable for ALL THREE mesh axes:
+
+```
+...
+    rotation={[rotate, rotate, rotate]}
+...
+
+```
+containers/app/threejs/src/routes/octo.svelte
 
 
 
