@@ -337,6 +337,20 @@ containers/app/threejs/src/routes/octo.svelte
 
 In the next section we’ll cover animation accessibility concerns and how to use ```prefers-reduced-motion``` to avoid using animations for users who don’t want them, and how to accommodate screens with varying frame-rates so your animations can look consistent across devices.
 
+## Svelte-Cubed: Creating an Accessible and Consistent Experience Across Devices
+
+In this section, we’re going to look at two sort-of unrelated topics. However, both fall under the umbrella of improving user experience:
+
+- Using ```prefers-reduced-motion``` to conditionally animate/transition things in our scene.
+
+- Using threejs clock and ```getDelta()``` to render the same motion for users with different device frame rates.
+
+### Conditional Motion: prefers-reduced-motion
+
+
+
+
+
 
 
 ==== WE ARE HERE https://dev.to/alexwarnes/svelte-cubed-creating-an-accessible-and-consistent-experience-across-devices-42ae  ===
