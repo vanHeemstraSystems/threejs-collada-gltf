@@ -17,6 +17,11 @@
   <Octo />
 </div>
 
+<p>An octahedron is a three-dimensional shape having eight plane faces, especially a regular solid figure with eight equal triangular faces.</p>
+<p>
+	<code>prefers-reduced-motion: {$reducedMotion}</code>
+</p>
+
 <style>
   .scene-container {
     /* position relative let's the canvas position itself relative to this container */
