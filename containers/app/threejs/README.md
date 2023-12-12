@@ -347,7 +347,11 @@ In this section, we’re going to look at two sort-of unrelated topics. However,
 
 ### Conditional Motion: prefers-reduced-motion
 
+Why does it matter?
 
+*Not everyone likes decorative animations or transitions, and some users outright experience motion sickness when faced with parallax scrolling, zooming effects, and so on. The user preference media query prefers-reduced-motion lets you design a motion-reduced variant of your site for users who have expressed this preference.*
+
+- Thomas Steiner ([twitter](https://twitter.com/tomayac)) in [prefers-reduced-motion: Sometimes less movement is more](https://web.dev/prefers-reduced-motion/)
 
 
 
