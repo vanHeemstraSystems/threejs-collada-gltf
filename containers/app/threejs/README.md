@@ -353,6 +353,38 @@ Why does it matter?
 
 - Thomas Steiner ([twitter](https://twitter.com/tomayac)) in [prefers-reduced-motion: Sometimes less movement is more](https://web.dev/prefers-reduced-motion/)
 
+And we want our scenes to be enjoyable for everyone, so first let’s figure out how to detect this preference in JavaScript so we can use it in our Svelte component. I’ll be using an approach from Geoff Rich ([twitter](https://twitter.com/geoffrich_)) explained in his post [A Svelte store for prefers-reduced-motion](https://geoffrich.net/posts/svelte-prefers-reduced-motion-store/).
+
+In a new javascript file we’ll call ```stores.js``` we can steal all of Geoff’s code (and cite it for future reference!) and paste it in.
+
+```
+import { readable } from "svelte/store";
+
+/*
+    Source: Geoff Rich, 
+    "A Svelte store for prefers-reduced-motion", 
+    URL: https://geoffrich.net/posts/svelte-prefers-reduced-motion-store/
+*/
+const reducedMotionQuery = '(prefers-reduced-motion: reduce)';
+
+const getInitialMotionPreference = () => window.matchMedia(reducedMotionQuery).matches;
+
+export const reducedMotion = readable(getInitialMotionPreference(), set => {
+  const updateMotionPreference = event => {
+    set(event.matches);
+  };
+
+  const mediaQueryList = window.matchMedia(reducedMotionQuery);
+  mediaQueryList.addEventListener('change', updateMotionPreference);
+
+  return () => {
+    mediaQueryList.removeEventListener('change', updateMotionPreference);
+  };
+});
+```
+containers/app/threejs/src/lib/stores.js
+
+The ```reducedMotion``` store provides a boolean that we can subscribe and react to anywhere in our application if the value changes. How can we use it? Well, anywhere we animate we can first check the preference and adjust as needed. Our motion is coming from two sources: the tweened store and our ```SC.onFrame()``` callback.
 
 
 
