@@ -1,6 +1,7 @@
 <script>
   import Cube from "./cube.svelte";
   import Octo from "./octo.svelte";
+  import { reducedMotion } from "../lib/stores";
 </script>
 <h1>Home Page</h1>
 
