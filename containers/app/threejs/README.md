@@ -456,6 +456,19 @@ Wow, that’s slow. But it’s slow for everyone! Now we can adjust our rotation
 
 Based on "Building a Master Detail App with Svelte" at https://docs.nativescript.org/tutorials/build-a-master-detail-app-with-svelte
 
+### Create the home page​
+Let's start with creating the file for our home page with the following contents:
+
+```
+<page></page>
+
+<script></script>
+```
+containers/app/threejs/scr/routes/home.svelte
+
+### Routing setup​
+We will be setting up the home page as our default route when the app starts. We can set the default route by importing the home component in our +page.svelte file and setting it as the defaultPage of the root's frame component. Open +page.svelte and add the following code:
+
 ```
 ...
 <script>
