@@ -1,3 +1,5 @@
-<page></page>
+<page>
+  <actionBar title="NativeFlix" />
+</page>
 
 <script></script>

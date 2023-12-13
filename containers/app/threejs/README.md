@@ -619,6 +619,23 @@ containers/app/threejs/scr/services/flickService.ts
 
 **NOTE**: If you get the following error: ```This import is never used as a value and must use 'import type' because 'importsNotUsedAsValues' is set to 'error'.ts(1371)```. Have a look at https://johnnyreilly.com/typescript-5-importsnotusedasvalues-error-eslint-consistent-type-imports
 
+Add a ```/src/assets/``` directory to your project, and copy the 3 static images over from the sample project [here](https://github.com/NativeScript/tutorials/tree/main/svelte-tutorial/app/assets).
+
+Next, let's break down the layout and UI elements of the home page.
+
+![tutorial-example-app-master-breakdown db63775e](https://github.com/vanHeemstraSystems/threejs-collada-gltf/assets/1499433/e1718194-d90c-4c5a-b73c-96e77c1d60f1)
+
+The home page can be divided into two main parts, the ActionBar with the title and the scrollable main content area with the cards (we will talk about the cards in the next section). Let's start with creating the ActionBar with the title. Open ```home.svelte``` and add the following code:
+
+```
+<page>
+  <actionBar title="NativeFlix" />
+</page>
+<script></script>
+```
+containers/app/threejs/scr/routes/home.svelte
+
+
 
 ==== WE ARE HERE  ===
 
