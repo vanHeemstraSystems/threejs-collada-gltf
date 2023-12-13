@@ -3,6 +3,7 @@
     import * as SC from "svelte-cubed";
     import { tweened } from "svelte/motion";
     import { elasticOut } from "svelte/easing";
+    const clock = new THREE.Clock();
     // import { reducedMotion } from "../lib/reducedMotion";
     let rotate = 0;
     // let scale = tweened(1, { duration: $reducedMotion ? 0: 2000, easing: elasticOut });
@@ -20,7 +21,7 @@
 
     SC.onFrame(() => {
       // Every frame, assign these radians to rotationY
-      rotate += .01;
+      rotate += .05 * clock.getDelta();
     })    
 </script>
 

@@ -428,13 +428,36 @@ That’s it? That’s it!
 ```
 containers/app/threejs/src/routes/octo.svelte
 
-==== WE ARE HERE https://dev.to/alexwarnes/svelte-cubed-creating-an-accessible-and-consistent-experience-across-devices-42ae  ===
+## Handling Variable Frame Rates Across Devices
+
+What do all those words mean? Much smarter people can explain it better than me, but I’ll take a shot and then point you to a better explanation.
+
+Some computer/monitor setups have powerful graphics and some do not. For example, our Octahedron is rotating 0.1 radians on each frame. So a setup running at 60 frames per second (fps) is watching your Octahedron rotate 0.1 radians 60 times every second. A less powerful setup running at 30fps is watching your Octahedron rotate 0.1 radians only 30 times every second. Those are very different experiences!
+
+For a more accurate and in-depth explanation checkout [The Animation Loop](https://discoverthreejs.com/book/first-steps/animation-loop/#fixed-and-dynamic-frames) chapter from the open source book *Discover three.js* by Lewy Blue ([twitter](https://twitter.com/lewy_blue)). If you are new to three.js I highly recommend taking some time to go through the whole book!
+
+Basically we need a way to standardize our hardcoded value inside ```SC.onFrame``` based on the current frame rate. We can do just that using the threejs Clock and the method ```getDelta()``` and multiplying our value by delta.
+
+```
+...
+  const clock = new THREE.Clock();
+  ...
+  SC.onFrame(() => {
+    rotate += .01 * clock.getDelta();
+  })
+...
+```
+containers/app/threejs/src/routes/octo.svelte
+
+Wow, that’s slow. But it’s slow for everyone! Now we can adjust our rotation value to get the rate we want (try 0.5).
+
 
 ## Building a Master Detail App with Svelte
 
 Based on "Building a Master Detail App with Svelte" at https://docs.nativescript.org/tutorials/build-a-master-detail-app-with-svelte
 
 
+==== WE ARE HERE  ===
 
 
 Next, we need to import our glTF model of the Lego baseplate...
