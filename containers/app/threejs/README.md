@@ -508,7 +508,7 @@ containers/app/threejs/scr/models/flick.ts
 We will then use the ```FlickModel``` in our ```FlickService``` to return our flick data. Create a ```services``` directory inside ```src``` and create a new file called ```flickService.ts```. Open the new ```flickService.ts``` and add the following:
 
 ```
-import { FlickModel } from '../models/flick'
+import type { FlickModel } from '../models/flick'
 
 export class FlickService {
   private flicks: FlickModel[] = [

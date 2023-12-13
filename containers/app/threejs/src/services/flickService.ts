@@ -1,4 +1,4 @@
-import { FlickModel } from '../models/flick'
+import type { FlickModel } from '../models/flick'
 
 export class FlickService {
   private flicks: FlickModel[] = [
