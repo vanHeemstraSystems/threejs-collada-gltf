@@ -1,9 +1,14 @@
 <script>
+  import Home from "./home.svelte";
   import Cube from "./cube.svelte";
   import Octo from "./octo.svelte";
   // import { reducedMotion } from "../lib/reducedMotion";
 </script>
 <h1>Home Page</h1>
+
+<page>
+  <frame id="rootFrame" defaultPage="{Home}"></frame>
+</page>
 
 <p>Cube:</p>
 

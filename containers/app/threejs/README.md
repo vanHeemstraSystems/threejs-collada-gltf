@@ -456,6 +456,23 @@ Wow, that’s slow. But it’s slow for everyone! Now we can adjust our rotation
 
 Based on "Building a Master Detail App with Svelte" at https://docs.nativescript.org/tutorials/build-a-master-detail-app-with-svelte
 
+```
+...
+<script>
+  ...
+  import Home from "./home.svelte";
+  ...
+</script>  
+...
+<page>
+  <frame id="rootFrame" defaultPage="{Home}"></frame>
+</page>
+...
+```
+containers/app/threejs/scr/routes/+page.svelte
+
+
+
 
 ==== WE ARE HERE  ===
 
