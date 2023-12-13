@@ -1,6 +1,7 @@
 <script>
 	import * as THREE from "three";
 	import * as SC from "svelte-cubed";
+	// import { reducedMotion } from "../lib/reducedMotion";
 	let width = 1;
 	let height = 1;
 	let depth = 1;

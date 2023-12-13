@@ -355,7 +355,7 @@ Why does it matter?
 
 And we want our scenes to be enjoyable for everyone, so first let’s figure out how to detect this preference in JavaScript so we can use it in our Svelte component. I’ll be using an approach from Geoff Rich ([twitter](https://twitter.com/geoffrich_)) explained in his post [A Svelte store for prefers-reduced-motion](https://geoffrich.net/posts/svelte-prefers-reduced-motion-store/).
 
-In a new javascript file we’ll call ```stores.js``` we can steal all of Geoff’s code (and cite it for future reference!) and paste it in.
+In a new javascript file we’ll call ```reducedMotion.js``` we can steal all of Geoff’s code (and cite it for future reference!) and paste it in.
 
 ```
 import { readable } from "svelte/store";
@@ -384,12 +384,57 @@ export const reducedMotion = readable(getInitialMotionPreference(), set => {
 ```
 containers/app/threejs/src/lib/stores.js
 
+**WARNING**: the above code may cause the following error when starting in a browser window: ```ReferenceError: window is not defined```. If so read https://www.okupter.com/blog/sveltekit-window-is-not-defined
+
+Our work-around for above error:
+
+```
+...
+import { browser } from '$app/environment';
+
+if (browser) {
+  // all rest of code goes here
+}
+...
+```
+containers/app/threejs/src/lib/stores.js
+
+**NOTE**: The above is still causing errors, hence we skip the feature all together for now...
+
 The ```reducedMotion``` store provides a boolean that we can subscribe and react to anywhere in our application if the value changes. How can we use it? Well, anywhere we animate we can first check the preference and adjust as needed. Our motion is coming from two sources: the tweened store and our ```SC.onFrame()``` callback.
 
+**First**: if a user *prefers* reduced motion, our tweened store duration will be 0 (i.e. it will go from value a to value b instantly).
 
+```
+...
+  import { reducedMotion } from "../lib/stores";
+  let scale = tweened(1, { duration: $reducedMotion ? 0: 2000, easing: elasticOut });
+...    
+```
+containers/app/threejs/src/routes/octo.svelte
 
+That’s it? That’s it!
+
+**Second**: if a user *does not* prefer reduced motion, we can update the rotation on every frame.
+
+```
+...
+  if(!$reducedMotion){
+    SC.onFrame(() => {
+      rotate += .01;
+    })
+  }
+...
+```
+containers/app/threejs/src/routes/octo.svelte
 
 ==== WE ARE HERE https://dev.to/alexwarnes/svelte-cubed-creating-an-accessible-and-consistent-experience-across-devices-42ae  ===
+
+## Building a Master Detail App with Svelte
+
+Based on "Building a Master Detail App with Svelte" at https://docs.nativescript.org/tutorials/build-a-master-detail-app-with-svelte
+
+
 
 
 Next, we need to import our glTF model of the Lego baseplate...

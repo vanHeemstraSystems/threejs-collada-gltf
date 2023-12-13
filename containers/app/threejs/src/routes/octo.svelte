@@ -3,7 +3,9 @@
     import * as SC from "svelte-cubed";
     import { tweened } from "svelte/motion";
     import { elasticOut } from "svelte/easing";
+    // import { reducedMotion } from "../lib/reducedMotion";
     let rotate = 0;
+    // let scale = tweened(1, { duration: $reducedMotion ? 0: 2000, easing: elasticOut });
     let scale = tweened(1, { duration: 2000, easing: elasticOut });
     let scaleType = "MEDIUM";
 

@@ -1,7 +1,7 @@
 <script>
   import Cube from "./cube.svelte";
   import Octo from "./octo.svelte";
-  import { reducedMotion } from "../lib/stores.js";
+  // import { reducedMotion } from "../lib/reducedMotion";
 </script>
 <h1>Home Page</h1>
 
@@ -18,9 +18,6 @@
 </div>
 
 <p>An octahedron is a three-dimensional shape having eight plane faces, especially a regular solid figure with eight equal triangular faces.</p>
-<p>
-	<code>prefers-reduced-motion: {$reducedMotion}</code>
-</p>
 
 <style>
   .scene-container {
